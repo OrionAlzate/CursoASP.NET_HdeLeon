@@ -1,0 +1,43 @@
+﻿@model List<Cliente>
+@{
+	//Layout = null;
+}
+
+<h1>Cliente</h1>
+<table class="table table-dark table-hover"> 
+	<thead>
+		<tr>
+			<th scope="col">
+				Id
+			</th>
+			<th scope="col">
+				Nombre
+			</th>
+			<th scope="col">
+				Apellido
+			</th>
+			<th scope="col">
+				Edad
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var cliente in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(e=>cliente.IdCliente)
+				</td>
+				<td>
+					@Html.DisplayFor(e=>cliente.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(e=>cliente.Apellido)
+				</td>
+				<td>
+					@cliente.Edad
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model List<Producto>
+     
+<h1>Productos</h1>
+
+<p>
+	<a asp-action="Create">Crear</a>
+</p>
+<table class="table table-dark table-hover">
+	<thead>
+		<tr>
+			<th scope="col">
+				Id Productos
+			</th>
+			<th scope="col">
+				Nombre Producto
+			</th>
+			<th scope="col">
+				Id Lista
+			</th>
+			<th scope="col">
+				Id Productos
+			</th>
+			<th scope="col">
+				Cantiiad Producto
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var producto in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(p=>producto.IdProducto)
+				</td>
+				<td>
+					@Html.DisplayFor(p=>producto.NombreProducto)
+				</td>
+					@foreach(var lista in producto.ListaProductos)
+					{
+						<td>
+							@Html.DisplayFor(p=> lista.IdLista)
+						</td>
+						<td>
+							@Html.DisplayFor(p=> lista.IdProducto)
+						</td>
+						<td>
+							@Html.DisplayFor(p=> lista.CantidadProducto)
+						</td>
+					}
+			</tr>
+		}
+	</tbody>
+</table>
